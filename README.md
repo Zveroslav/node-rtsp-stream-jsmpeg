@@ -29,7 +29,7 @@ const Stream = require('node-rtsp-stream-jsmpeg')
 const options = {
   name: 'streamName',
   url: 'rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov',
-  wsPort: 3232
+  wsPort: 3333
 }
 
 stream = new Stream(options)
@@ -54,9 +54,9 @@ stream.start()
   </div>
 
   <script type="text/javascript">
-  	var url = ws://localhost:5000
-    var canvas = document.getElementById('video-canvas');
-    var player = new JSMpeg.Player(url, {canvas: canvas});
+  var url = ws://localhost:3333;
+  var canvas = document.getElementById('video-canvas');
+  var player = new JSMpeg.Player(url, {canvas: canvas});
   </script>
 </body>
 ```
