@@ -1,0 +1,41 @@
+{
+  "_id": "node-rtsp-stream-jsmpeg@1.0",
+  "_inBundle": false,
+  "_location": "/node-rtsp-stream-jsmpeg",
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "node-rtsp-stream-jsmpeg@1.0",
+    "name": "node-rtsp-stream-jsmpeg",
+    "escapedName": "node-rtsp-stream-jsmpeg",
+    "rawSpec": "1.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0"
+  },
+  "author": {
+    "name": "Zveroslav"
+  },
+  "bugs": {
+    "url": "https://github.com/Zveroslav/node-rtsp-stream-jsmpeg/issues"
+  },
+  "dependencies": {
+    "jsmpeg": "^1.0.0",
+    "ws": "^1.1.1",
+    "http-shutdown": "^1.2"
+  },
+  "description": "RTSP stream through WebSocket for jsmpeg decoder",
+  "homepage": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "name": "node-rtsp-stream-jsmpeg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zveroslav/node-rtsp-stream-jsmpeg.git"
+  },
+  "version": "1.0"
+}
