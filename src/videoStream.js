@@ -17,6 +17,7 @@ class VideoStream extends EventEmitter {
     this.stream = 0
     this.httpServer = null
     this.server = null
+    this.ffmpegPath = options.ffmpegPath || "ffmpeg"
 
     this.stream2Socket()
   }
@@ -102,7 +103,7 @@ class VideoStream extends EventEmitter {
   }
 
   start() {
-    this.mpeg1Muxer = new Mpeg1Muxer({ url: this.url, port: this.port })
+    this.mpeg1Muxer = new Mpeg1Muxer({ url: this.url, port: this.port, ffmpegPath: this.ffmpegPath })
     this.mpeg1Muxer.on('mpeg1data', (data) => { return this.emit('camdata', data) })
 
     let gettingInputData = false
