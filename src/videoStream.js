@@ -52,7 +52,7 @@ class VideoStream extends EventEmitter {
 
     // HTTP Server to accept incomming MPEG-TS Stream from ffmpeg
     var streamServer = http.createServer( function(request, response) {
-      var params = request.url.substr(1).split('/');
+      var params = request.url.substring(1).split('/');
 
       if (params[0] !== 's1') {
         console.log(
@@ -61,7 +61,7 @@ class VideoStream extends EventEmitter {
         );
         response.end();
       }
-      response.connection.setTimeout(0);
+      response.socket.setTimeout(0);
       console.log(
         'Stream Connected: ' +
         request.socket.remoteAddress + ':' +
@@ -91,7 +91,7 @@ class VideoStream extends EventEmitter {
   }
 
   onSocketConnect(socket) {
-    let streamHeader = new Buffer(8)
+    let streamHeader = Buffer.alloc(8)
     streamHeader.write(STREAM_MAGIC_BYTES)
     streamHeader.writeUInt16BE(this.width, 4)
     streamHeader.writeUInt16BE(this.height, 6)
