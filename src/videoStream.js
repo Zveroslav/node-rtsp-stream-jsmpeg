@@ -129,7 +129,14 @@ class VideoStream extends EventEmitter {
         }
       }
     })
-    this.mpeg1Muxer.on('ffmpegError', (data) => { return global.process.stderr.write(data) })
+    this.mpeg1Muxer.on('ffmpegError', (data) => {
+      if (data.toString().includes('Conversion failed!') || data.toString().includes("No route to host")) {
+        console.log('Attempting stream restart...');
+        this.start();
+      }
+
+      return global.process.stderr.write(data)
+    })
     return this
   }
 
